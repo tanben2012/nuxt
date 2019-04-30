@@ -1,9 +1,9 @@
 <template>
   <section class="container">
     <div>
-      <logo />
+      <!-- <logo /> -->
       <h1 class="title">
-        demo123
+        demo1
       </h1>
       <h2 class="subtitle">
         My kryptonian Nuxt.js project
@@ -19,16 +19,32 @@
           >GitHub</a
         >
       </div>
+
+      <el-row>
+        <el-button>默认按钮</el-button>
+        <el-button type="primary">主要按钮</el-button>
+      </el-row>
     </div>
+    <br />
+    <cube-button @click="showDialog">show dialog</cube-button>
   </section>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+// import Logo from '~/components/Logo.vue'
 
 export default {
   components: {
-    Logo
+    // Logo
+  },
+  methods: {
+    showDialog() {
+      this.$createDialog({
+        type: 'alert',
+        title: 'Alert',
+        content: 'dialog content'
+      }).show()
+    }
   }
 }
 </script>
@@ -36,7 +52,6 @@ export default {
 <style>
 .container {
   margin: 0 auto;
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;

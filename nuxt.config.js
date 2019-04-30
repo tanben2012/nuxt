@@ -29,7 +29,7 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['@/plugins/element-ui'],
+  plugins: ['@/plugins/element-ui','@/src/cube-ui.js'],
 
   /*
    ** Nuxt.js modules
@@ -63,7 +63,8 @@ module.exports = {
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
           exclude: /(node_modules)/
-        })
+        }),
+        config.resolve.alias['cube-ui'] = 'cube-ui/lib'
       }
     }
   }
